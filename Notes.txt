@@ -1,0 +1,18 @@
+I had a cilkfor within a cilkfor and I got all kinds of unpredicatable
+results. 
+
+data sets for partitions
+
+ls /net/slc07iey/scratch/ntpember
+
+
+ade useview arh
+# only first time ade sharetrans ntpember_arh1  
+
+ls workload/partition_exp/splitters/
+	main: find_splitters.cpp
+	main: sample.cpp
+	main: skew_analysis.cpp (original of find_splitters)
+	
+
+

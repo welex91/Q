@@ -1,0 +1,5 @@
+ifld,I4,
+ffld,F4,
+sfld,SC,'maxlen=[7]'
+dfld,F8,
+xxx,LKP,'is_dict_old=[false]:dict=[lkp_SV]'

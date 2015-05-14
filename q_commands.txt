@@ -1,0 +1,70 @@
+  ** easy = meta data based
+  binld
+  mv_fld
+  pr_fld
+  bindmp
+
+  pack
+  unpack
+  f1s1opf2
+  f1f2opf3
+  f1opf2f3
+  s_to_f
+  f1opf2
+  wisifxthenyelsez
+  set_val
+  get_val
+  stride
+  regex_match
+  f_to_s
+  f1f2_to_s
+  subsample
+
+  top_n
+
+  mk_bins
+
+# Inputs splittable. Outputs to be stitched together
+  copy_fld
+  copy_fld_ranges
+  crossprod
+
+# medium difficulty. Inputs splittable. Outputs to be merged.
+  count_ht
+  count
+  countf
+  count_vals
+  num_in_range
+  xfer
+
+  rng_join
+  rng_sort
+  lkp_sort
+  t1f1t2f2opt3f3
+
+  is_a_in_b
+  srt_join
+  is_A_in_b
+
+
+  approx_unique
+  approx_quantile
+  approx_frequent
+
+# work but no deep thought. Need to fill in last bucket of first guy
+  app_tbl
+
+# medium  difficulty
+sort
+sortf1f2
+
+
+# use of auxiliary data structures to reduce search
+  dir_is_a_in_b
+
+# UDFs
+  udf_deg2
+  udf_patmatch
+
+# to deprecate
+  percentiles. Can be either sort + stride or approx_quantile

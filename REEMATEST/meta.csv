@@ -1,0 +1,4 @@
+ifld,I4,
+ffld,F4,
+sfld,SC,'maxlen=[7]'
+dfld,F8,

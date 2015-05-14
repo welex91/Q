@@ -1,0 +1,9 @@
+\begin{center}
+\tablefirsthead{\hline {|l|l|l}{\bf XX} & {\bf YY} & {\bf ZZ} \\ \hline}
+\tablehead{\hline {|l|l|l}{\bf XX2} & {\bf YY2} & {\bf ZZ2} \\ \hline}
+\tabletail{\hline {|l|l|l} {\small\sl continued on next page} & & \\ }
+\tablelasttail{\hline}
+\bottomcaption{This table is split across pages}
+\begin{supertabular}{|l|l|l}
+\end{supertabular}{|l|l|l}
+\end{center}
