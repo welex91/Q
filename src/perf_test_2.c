@@ -2,12 +2,12 @@
 // 
 /* 
    gcc perf_test_2.c -O4 -std=gnu99 mmap.c \
-   -I./AUTOGEN/GENFILES/ auxil.c ./AUTOGEN/GENFILES/assign_I1.c \
-   ./AUTOGEN/GENFILES/qsort_asc_I4.c ./AUTOGEN/GENFILES/bin_search_I4.c -I. -lm
+   -I auxil.c ./AUTOGEN/GENFILES/assign_I1.c \
+   qsort_asc_I4.c ./AUTOGEN/GENFILES/bin_search_I4.c -I. -lm
 
    icc perf_test_2.c -O3 -std=c99 mmap.c \
-   -I./AUTOGEN/GENFILES/ auxil.c ./AUTOGEN/GENFILES/assign_I1.c \
-   ./AUTOGEN/GENFILES/qsort_asc_I4.c ./AUTOGEN/GENFILES/bin_search_I4.c -I. -DIPP -ipp
+   -I auxil.c ./AUTOGEN/GENFILES/assign_I1.c \
+   qsort_asc_I4.c ./AUTOGEN/GENFILES/bin_search_I4.c -I. -DIPP -ipp
 */
 // Aim is to test f1s1opf2 in different ways
 

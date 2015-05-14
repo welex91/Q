@@ -1,6 +1,6 @@
 // compile as 
-// gcc perf_test_1.c -O4 -std=gnu99 -fopenmp -lgomp mmap.c ./AUTOGEN/GENFILES/add2_I4.c -I./AUTOGEN/GENFILES/ ./AUTOGEN/GENFILES/add2_F4.c 
-// icc perf_test_1.c -O3 -std=c99 -fopenmp -lgomp ./AUTOGEN/GENFILES/add2_I4.c -I./AUTOGEN/GENFILES/ mmap.c  ./AUTOGEN/GENFILES/add2_F4.c 
+// gcc perf_test_1.c -O4 -std=gnu99 -fopenmp -lgomp mmap.c add2_I4.c -I./AUTOGEN/GENFILES/ ./AUTOGEN/GENFILES/add2_F4.c 
+// icc perf_test_1.c -O3 -std=c99 -fopenmp -lgomp add2_I4.c -I./AUTOGEN/GENFILES/ mmap.c  ./AUTOGEN/GENFILES/add2_F4.c 
 #include "qtypes.h"
 #include <omp.h>
 // #include "ipps.h"

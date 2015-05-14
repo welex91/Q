@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include "../src/constants.h"
-#include "../src/macros.h"
+#include "constants.h"
+#include "macros.h"
 // START FUNC DECL
 int
 countf_I8(

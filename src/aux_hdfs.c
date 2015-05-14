@@ -97,7 +97,7 @@ get_file_names(
 #undef UNIT_TEST
 #ifdef UNIT_TEST
 /*
-  gcc -g -Wall -std=gnu99 mmap.c auxil.c ./AUTOGEN/GENFILES/assign_I1.c aux_hdfs.c -I./AUTOGEN/GENFILES -lm
+  gcc -g -Wall -std=gnu99 mmap.c auxil.c assign_I1.c aux_hdfs.c -I./AUTOGEN/GENFILES -lm
 */
 int
 main(

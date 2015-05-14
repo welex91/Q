@@ -1,5 +1,5 @@
-#include "../../constants.h"
-#include "../../macros.h"
+#include "constants.h"
+#include "macros.h"
 #include <stdio.h>
 #include <stdbool.h>
 

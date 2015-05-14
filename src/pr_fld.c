@@ -11,13 +11,13 @@
 #include "pr_fld_SC.h"
 #include "pr_fld_SV.h"
 #include "fld_meta.h"
-#include "./AUTOGEN/GENFILES/extract_I8.h"
-#include "./AUTOGEN/GENFILES/pr_fld_I1.h"
-#include "./AUTOGEN/GENFILES/pr_fld_I2.h"
-#include "./AUTOGEN/GENFILES/pr_fld_I4.h"
-#include "./AUTOGEN/GENFILES/pr_fld_I8.h"
-#include "./AUTOGEN/GENFILES/pr_fld_F4.h"
-#include "./AUTOGEN/GENFILES/pr_fld_F8.h"
+#include "extract_I8.h"
+#include "pr_fld_I1.h"
+#include "pr_fld_I2.h"
+#include "pr_fld_I4.h"
+#include "pr_fld_I8.h"
+#include "pr_fld_F4.h"
+#include "pr_fld_F8.h"
 
 #define MAX_NUM_FLDS_TO_PR 16
 
