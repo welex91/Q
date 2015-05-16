@@ -5,13 +5,13 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <unistd.h>
-#ifdef MAC_OSX
-#include <sys/sysinfo.h>
+#if defined(__APPLE__) && defined(__MACH__)
 #include "macstuff.h"
 #include <i386/limits.h>
 #include <malloc/malloc.h>
 #else
 #include <values.h>
+#include <sys/sysinfo.h>
 #endif
 #include <limits.h>
 #include <math.h>
@@ -23,7 +23,7 @@
 #include <float.h>
 #include <sys/time.h>
 #include <sys/mman.h>
-#include <sys/sysinfo.h>
+
 #include "constants.h"
 #include "macros.h"
 

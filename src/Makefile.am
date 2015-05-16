@@ -10,9 +10,10 @@ LINKER=g++
 
 # PICFLAG=-fPIC: add -fPIC when compiling q.a for shell loadable builtin
 PICFLAG=
-GCCFLAGS = ${GCCOPTFLAG} -ansi -pedantic -std=gnu99 $(PICFLAG) -Wall -fopenmp
+GCCFLAGS = ${GCCOPTFLAG} -ansi -pedantic -std=gnu99 $(PICFLAG) -Wall -fopenmp -DMAC_OSX
 DBG = -DDEBUG 
-CFLAGS= ${GCCFLAGS} ${DBG} -I../include -I../AUTOGEN/GENFILES
+CFLAGS= ${GCCFLAGS} ${DBG} -I../include -I../AUTOGEN/GENFILES 
+LDFLAGS = -L/usr/local/Cellar/gcc/4.9.2_1/lib/gcc/4.9
 
 ## FOLLOWING FOR MAC_OSX
 # GCCFLG = ${GCCOPTFLAG} -ansi -pedantic -std=c99 $(PICFLAG) -Wall -DMAC_OSX
@@ -631,11 +632,9 @@ COREQ = \
 
 
 qhttpd: qhttpd.o $(COREQ) $(RD_META_Q)
-	$(LINKER) $(GCCFLAGS) -o $@ $^ -ldl -lm -L$(HOME)/local/lib -lcurl
+	$(LINKER) $(GCCFLAGS) -o $@ $^ $(LDFLAGS) -L$(HOME)/local/lib -ldl -lm -lcurl
 
-DEPS = $(HEADER_DIR)/qtypes.h $(HEADER_DIR)/constants.h $(HEADER_DIR)/macros.h
-
-.c.o: $(DEPS)
+.c.o: $(INC1)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< 
 
 qwrap.o: qwrap.c
@@ -646,7 +645,7 @@ q.o: q.c
 
 q: qwrap.o $(COREQ) $(RD_META_Q)
 	$(LINKER) $(GCCFLAGS) -o $@ $^ -ldl -lm \
-	-fopenmp -lgomp -L$(HOME)/local/lib -lcurl
+	-fopenmp $(LDFLAGS) -L$(HOME)/local/lib -lcurl
 
 
 
@@ -657,10 +656,10 @@ ut_mk_dict: ut_mk_dict.o mk_dict.o MurmurHash3.o \
 	$(CC) $(CFLAGS) -o $@ $^ -ldl -lm -lpthread $(LDFLAGS)  
 
 ut_webhdfs.o : ut_webhdfs.c 
-	$(CC) $(CFLAGS) -c ut_webhdfs.c  -I/home/subramon/local/include
+	$(CC) $(CFLAGS) -c ut_webhdfs.c  
 
 ut_webhdfs: ut_webhdfs.o  auxil.o mmap.o assign_I1.o 
-	$(CC) $(CFLAGS) -o $@ $^ -ldl -lm -lpthread -L$(HOME)/local/lib -lcurl $(LDFLAGS)  -L/home/subramon/local/lib 
+	$(CC) $(CFLAGS) -o $@ $^ -ldl -lm -lpthread -L$(HOME)/local/lib -lcurl $(LDFLAGS)  
 
 ut_rd_dict: ut_rd_dict.o rd_dict.o MurmurHash3.o \
 	auxil.o mmap.o mix.o bin_search_UI8.o 
@@ -721,7 +720,7 @@ qtils: qtilswrap.o qtils.o time1.o replace_char.o \
 	sort4_dsc_I8.o \
 	sort3_asc_F4.o \
 	sort3_dsc_F4.o 
-	$(LINKER) -o $@ $^ -ldl -lm -fopenmp -lgomp -L$(HOME)/local/lib -lcurl
+	$(LINKER) -o $@ $^ $(LDFLAGS) -ldl -lm -fopenmp  -L$(HOME)/local/lib -lcurl
 
 orig_meta_globals.c: orig_meta_globals.h
 	cp orig_meta_globals.h orig_meta_globals.c
@@ -755,9 +754,6 @@ test_driver_qsort: test_driver_qsort.o \
 # DO NOT include 3rd party headers for your source
 # DO     include your own headers
 #
-DEPS = qtypes.h constants.h macros.h
-%.o:  %.c $(DEPS)
-	$(CC) $(CFLAGS) $(INCLUDES) -c  $< 
 
 set_val.o: set_val.c $(HEADER_DIR)/set_val.h $(INC1) \
 	incl_set_val_I1.c \
